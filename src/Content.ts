@@ -25,10 +25,38 @@ export default class Content {
 
         // Kezd a kódolást innen -->
 
-        res.write("Hello Jedlik , hello 9A")
-        res.write("<h2 style='color:blue;'>TipeScript</h2>")
-        res.write("próba\n")
-        res.write("alma\n")
+        // let x = 12;
+        // x = 20;
+        // res.write(`${x}` + "\n");
+        // res.write(x.toString() + "\n");
+        // const szöveg = "alma";
+        // res.write(szöveg + "\n");
+        // let esik: boolean;
+        // esik = false;
+        // esik = true;
+        // res.write(`${!esik}\n`);
+        // res.write(esik);
+
+        res.write("Téglalap területe és kerülete\n");
+        res.write("a =");
+        let oldalA: number = parseInt(params.inputa as string);
+        if (isNaN(oldalA)) {
+            oldalA = 0;
+        }
+        res.write(`<input type='text' name='inputa' value=${oldalA} style='width:5em;' onChange='this.form.submit();'>\n`);
+
+        res.write("Téglalap területe és kerülete\n");
+        res.write("b =");
+        let oldalB: number = parseInt(params.inputb as string);
+        if (isNaN(oldalB)) {
+            oldalB = 0;
+        }
+        res.write(`<input type='text' name='inputb' value=${oldalB} style='width:5em;' onChange='this.form.submit();'>\n`);
+
+        const terület = oldalA * oldalB;
+        const kerület = (oldalA + oldalB) * 2;
+        res.write(`Terület = ${terület}\n`);
+        res.write(`Kerület = ${kerület}\n`);
 
         // <---- Fejezd be a kódolást
 
