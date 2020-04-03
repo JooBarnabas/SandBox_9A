@@ -37,69 +37,79 @@ export default class Content {
         // res.write(`${!esik}\n`);
         // res.write(esik);
 
-        res.write("Téglalap területe és kerülete\n");
+        // res.write("Téglalap területe és kerülete\n");
+        // res.write("a =");
+        // let oldalA: number = parseInt(params.inputa as string);
+        // if (isNaN(oldalA)) {
+        //     oldalA = 0;
+        // }
+        // res.write(`<input type='text' name='inputa' value=${oldalA} style='width:5em;' onChange='this.form.submit();'>\n`);
+
+        // res.write("Téglalap területe és kerülete\n");
+        // res.write("b =");
+        // let oldalB: number = parseInt(params.inputb as string);
+        // if (isNaN(oldalB)) {
+        //     oldalB = 0;
+        // }
+        // res.write(`<input type='text' name='inputb' value=${oldalB} style='width:5em;' onChange='this.form.submit();'>\n`);
+
+        // const terület = oldalA * oldalB;
+        // const kerület = (oldalA + oldalB) * 2;
+        // res.write(`Terület = ${terület}\n`);
+        // res.write(`Kerület = ${kerület}\n`);
+        // res.write("\n\n");
+
+        // res.write("<h2>Páros-páratlan meghatározó</h2>\n");
+        // res.write("x =");
+        // let x: number = parseInt(params.inputx as string);
+        // if (isNaN(x)) {
+        //     x = 0;
+        // }
+        // res.write(`<input type='number' name='inputx' value=${x} style='width:5em;' onChange='this.form.submit();'>\n`);
+        // if (x % 2 === 0) {
+        //     res.write("A szám páros!\n\n\n");
+        // } else {
+        //     res.write("A szám páratlan!\n\n\n");
+        // }
+
+        // res.write("<h2>KRÉTA</h2>");
+        // res.write("Kérem az osztályzatot: ");
+        // let jegy: number = parseInt(params.jegy as string);
+        // if (isNaN(jegy)) {
+        //     jegy = 5;
+        // }
+        // res.write(`<input type='number' name='jegy' value=${jegy} style='width:5em;' onChange='this.form.submit();'>\n`);
+        // switch (jegy) {
+        //     case 1:
+        //         res.write("Elégtelen\n");
+        //         break;
+        //     case 2:
+        //         res.write("Elégséges\n");
+        //         break;
+        //     case 3:
+        //         res.write("Közepes\n");
+        //         break;
+        //     case 4:
+        //         res.write("Jó\n");
+        //         break;
+        //     case 5:
+        //         res.write("Jeles\n");
+        //         break;
+
+        //     default:
+        //         res.write("Ez nem osztlyzat");
+        //         break;
+        // }
+
+        res.write("<h2>Szabályosháromszög teülete</h2>\n");
         res.write("a =");
-        let oldalA: number = parseInt(params.inputa as string);
-        if (isNaN(oldalA)) {
-            oldalA = 0;
+        let a: number = parseInt(params.inputa as string);
+        if (isNaN(a)) {
+            a = 0;
         }
-        res.write(`<input type='text' name='inputa' value=${oldalA} style='width:5em;' onChange='this.form.submit();'>\n`);
-
-        res.write("Téglalap területe és kerülete\n");
-        res.write("b =");
-        let oldalB: number = parseInt(params.inputb as string);
-        if (isNaN(oldalB)) {
-            oldalB = 0;
-        }
-        res.write(`<input type='text' name='inputb' value=${oldalB} style='width:5em;' onChange='this.form.submit();'>\n`);
-
-        const terület = oldalA * oldalB;
-        const kerület = (oldalA + oldalB) * 2;
-        res.write(`Terület = ${terület}\n`);
-        res.write(`Kerület = ${kerület}\n`);
-        res.write("\n\n");
-
-        res.write("<h2>Páros-páratlan meghatározó</h2>\n");
-        res.write("x =");
-        let x: number = parseInt(params.inputx as string);
-        if (isNaN(x)) {
-            x = 0;
-        }
-        res.write(`<input type='number' name='inputx' value=${x} style='width:5em;' onChange='this.form.submit();'>\n`);
-        if (x % 2 === 0) {
-            res.write("A szám páros!\n\n\n");
-        } else {
-            res.write("A szám páratlan!\n\n\n");
-        }
-
-        res.write("<h2>KRÉTA</h2>");
-        res.write("Kérem az osztályzatot: ");
-        let jegy: number = parseInt(params.jegy as string);
-        if (isNaN(jegy)) {
-            jegy = 5;
-        }
-        res.write(`<input type='number' name='jegy' value=${jegy} style='width:5em;' onChange='this.form.submit();'>\n`);
-        switch (jegy) {
-            case 1:
-                res.write("Elégtelen\n");
-                break;
-            case 2:
-                res.write("Elégséges\n");
-                break;
-            case 3:
-                res.write("Közepes\n");
-                break;
-            case 4:
-                res.write("Jó\n");
-                break;
-            case 5:
-                res.write("Jeles\n");
-                break;
-
-            default:
-                res.write("Ez nem osztlyzat");
-                break;
-        }
+        res.write(`<input type='number' name='inputa' value=${a} style='width:5em;' onChange='this.form.submit();'>\n\n`);
+        const terület = (a * (Math.sqrt(3) / 2) * a) / 2;
+        res.write(`Terület: ${terület}`);
 
         // <---- Fejezd be a kódolást
 
